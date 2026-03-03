@@ -17,7 +17,6 @@ int main() {
     for (i = 0; i < n; i++) {
         scanf("%s %d %d", p[i].pid, &p[i].arrival, &p[i].burst);
     }
-
     // Sort by arrival time
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - i - 1; j++) {
