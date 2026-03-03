@@ -30,7 +30,6 @@ int main() {
     }
 
     int currentTime = 0;
-    float totalWaiting = 0, totalTurnaround = 0;
 
     for (i = 0; i < n; i++) {
         if (currentTime < p[i].arrival)
@@ -40,24 +39,16 @@ int main() {
         p[i].turnaround = p[i].waiting + p[i].burst;
 
         currentTime += p[i].burst;
-
-        totalWaiting += p[i].waiting;
-        totalTurnaround += p[i].turnaround;
     }
 
-    printf("PID\tArrival\tBurst\tWaiting\tTurnaround\n");
-
     for (i = 0; i < n; i++) {
-        printf("%s\t%d\t%d\t%d\t%d\n",
+        printf("%s %d %d %d %d\n",
                p[i].pid,
                p[i].arrival,
                p[i].burst,
                p[i].waiting,
                p[i].turnaround);
     }
-
-    printf("Average Waiting Time = %.2f\n", totalWaiting / n);
-    printf("Average Turnaround Time = %.2f\n", totalTurnaround / n);
 
     return 0;
 }
